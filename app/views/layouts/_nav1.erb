@@ -1,0 +1,13 @@
+<nav>
+  <ul>
+    <li><%= link_to_unless_current "Home", root_path %></li>
+    <% unless current_user %>
+    <li><%=link_to_unless_current "Signup", new_user_path %></li>
+    <li><%= link_to_unless_current "Login", new_session_path %></li>
+    <% end %>
+    <% if current_user %>
+    <li><%= link_to_unless_current "Welcome, #{current_user.username}!", user_path(current_user) %></li>
+    <li><%= link_to_unless_current "Logout", logout_path %></li>
+    <% end %>
+  </ul>
+</nav>

@@ -1,0 +1,14 @@
+<div>
+  <h1><%= @user.username %>'s Profile</h1>
+</div>
+<div>
+  <h2>Latest Projects</h2>
+  <ul>
+  <% @user.projects.each do |p| %>
+    <li><%= link_to p.title, project_path(p) %></a></li>
+  <% end %>
+  </ul>
+</div>
+<div>
+  <h2>Latest Sales</h2>
+</div>

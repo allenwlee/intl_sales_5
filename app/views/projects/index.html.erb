@@ -1,0 +1,45 @@
+<div>
+  <h1><%= @project.title %></h1>
+</div>
+<div>
+  <h3>Project details</h3>
+</div>
+<div>
+<div>
+  <ul>
+    <li>Genres</li>
+    <li>Budget</li>
+    <li>Description</li>
+  </ul>
+</div>
+  <ul>
+    <li><%= @project.genres.map { |g| g.name }.join(', ') %></li>
+    <li><%= @project.budget_size %></li>
+    <li><%= @project.description %></li>
+  </ul>
+</div>
+<div>
+  <h3>Sales</h3>
+</div>
+  <ul>
+    <li>Territories</li>
+    <li>Media</li>
+    <li>Bid</li>
+    <li>Ask</li>
+    <li>Close</li>
+    <li>Close Date</li>
+  </ul>
+<div>
+  <% @project.sales.each do |s| %>
+  <ul>
+    <li><%= s.territories.map {|t| t.name }.join(', ') %> </li>
+    <li><%=s.media.map {|m| m.name }.join(', ') %></li>
+    <li><%=s.bid %></li>
+    <li><%=s.ask %></li>
+    <li><%=s.close %></li>
+    <li><%=s.close_date %></li>
+  </ul>
+  <% end %>
+</div>
+</div>
+
