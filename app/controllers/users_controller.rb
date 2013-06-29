@@ -17,8 +17,6 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @user.save
     session[:id] = @user.id
-    p '$$$$%%'
-    p params
     p @user.id
     redirect_to user_path(@user)
   end
