@@ -5,13 +5,13 @@
   <h3>Project details</h3>
 </div>
 <div>
-<div>
   <ul>
     <li>Genres</li>
     <li>Budget</li>
     <li>Description</li>
   </ul>
 </div>
+<div>
   <ul>
     <li><%= @project.genres.map { |g| g.name }.join(', ') %></li>
     <li><%= @project.budget_size %></li>
@@ -21,6 +21,7 @@
 <div>
   <h3>Sales</h3>
 </div>
+<div>
   <ul>
     <li>Territories</li>
     <li>Media</li>
@@ -29,6 +30,7 @@
     <li>Close</li>
     <li>Close Date</li>
   </ul>
+</div>
 <div>
   <% @project.sales.each do |s| %>
   <ul>
@@ -41,5 +43,3 @@
   </ul>
   <% end %>
 </div>
-</div>
-
