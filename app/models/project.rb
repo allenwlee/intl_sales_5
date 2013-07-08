@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :user_id, :title, :budget_size
+  attr_accessible :user_id, :title, :budget_size, :description, :genres
   belongs_to :user
   has_many :sales
   has_and_belongs_to_many :genres

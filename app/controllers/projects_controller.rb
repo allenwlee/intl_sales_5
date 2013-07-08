@@ -5,4 +5,14 @@ class ProjectsController < ApplicationController
     render 'projects/index'
   end
 
+  def new
+    @project = Project.new
+    render 'projects/new'
+  end
+
+  def create
+    p params[:project]
+    @project =Project.create(params[:project])
+    redirect_to user_path(current_user)
+  end
 end
