@@ -32,6 +32,20 @@
   </ul>
 </div>
 <div>
+  <h4><%= link_to 'Add a Sale', new_sale_path %></h4>
+</div>
+<div>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+
+<div>
   <% @project.sales.each do |s| %>
   <ul>
     <li><%= s.territories.map {|t| t.name }.join(', ') %> </li>

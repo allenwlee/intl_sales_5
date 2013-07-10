@@ -1,0 +1,18 @@
+<div>
+  <h1>Create a Sale</h1>
+  <%= form_for @sale do |f| %>
+    <%= fields_for @territories do |t| %>
+      <%= t.label :territories %>
+      <%= t.select_tag :territories, options_from_collection_for_select(@territories, :id, :name), :multiple => true %>
+    <% end %>
+    <%= f.label :bid %>
+    <%= f.number_field :bid, :placeholder => 'Enter Bid' %>
+    <%= f.label :ask %>
+    <%= f.number_field :ask, :placeholder => 'Enter Ask' %>
+    <%= f.label :close %>
+    <%= f.number_field :close, :placeholder => 'Enter Close' %>
+    <%= f.label :close_date %>
+    <%= f.date_field :close_date, :placeholder => 'Enter Close Date' %>
+    <%= f.submit 'Create a Sale' %>
+  <% end %>
+</div>
